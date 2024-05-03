@@ -24,7 +24,7 @@
    <td>${name}</td>
    <td>${last}</td>
    <td>${handle}</td>
-   <td><button class="btn-danger delete-row">Delete Row</button></td>
+   <td><button onclick="deleteRow(event)" class="btn-danger delete-row">Delete Row</button></td>
    
    </tr>
   
@@ -39,18 +39,18 @@
    const handleInput = document.querySelector('.handle');
    
    addRowToTable(nameInput.value, lastInput.value, handleInput.value, elementIndex);
-
-   const deleteRowButton = document.querySelector('.delete-row');
-   deleteRowButton.addEventListener("click", (event) => {
-         event.target.parentElement.parentElement.remove();
-         
-   });
-   elementIndex += 1;
+      elementIndex += 1;
  });
+//    const deleteRowButton = document.querySelector('.delete-row');
+//    deleteRowButton.addEventListener("click", (event) => {
+//          event.target.parentElement.parentElement.remove();
+         
+//    });
+//  });
 
-// const deleteRow = (event) => {
-//    event.target.parentElement.parentElement.remove()
-// }
+const deleteRow = (event) => {
+   event.target.parentElement.parentElement.remove()
+}
 const darkMode = document.querySelector('.fa-moon');
 darkMode.addEventListener('click', () => {
    document.body.classList.toggle("dark-mode");
